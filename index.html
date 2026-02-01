@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codice Amico isybank 2026 | Bonus Benvenuto</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        :root { --brand: #ff5000; --bg: #ffffff; --text: #1a1a1a; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f0f2f5; color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: var(--bg); padding: 2.5rem; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); max-width: 400px; width: 90%; text-align: center; }
+        .badge { background: #fff5f0; color: var(--brand); padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; display: inline-block; }
+        h1 { font-size: 1.5rem; margin: 1rem 0; font-weight: 800; }
+        .code-container { background: #f8f9fa; border: 2px dashed #dee2e6; padding: 20px; border-radius: 16px; margin: 1.5rem 0; cursor: pointer; transition: 0.2s; }
+        .code-container:hover { border-color: var(--brand); background: #fff9f6; }
+        #promo-code { font-family: 'Monaco', monospace; font-size: 2rem; color: var(--brand); font-weight: bold; display: block; }
+        .btn-action { background: var(--brand); color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; width: 100%; cursor: pointer; font-size: 1rem; transition: transform 0.2s; }
+        .btn-action:active { transform: scale(0.98); }
+        .instructions { text-align: left; font-size: 0.85rem; color: #666; margin-top: 1.5rem; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">Promozione Attiva 2026</div>
+        <h1>Bonus isybank</h1>
+        <p>Copia il codice e inseriscilo nell'app per attivare il tuo premio.</p>
+        
+        <div class="code-container" onclick="copyCode()">
+            <span id="promo-code">Y0JDXA35QK</span>
+            <small id="status">Tocca per copiare</small>
+        </div>
+
+        <button class="btn-action" onclick="copyCode()">COPIA CODICE</button>
+
+        <div class="instructions">
+            <strong>Checklist per il bonus:</strong>
+            <ul>
+                <li>Scarica l'app isybank</li>
+                <li>Inizia la registrazione del conto</li>
+                <li>Incolla il codice nel campo "Codice Amico"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById('promo-code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                // Tracking evento clic
+                if(typeof gtag === 'function') {
+                    gtag('event', 'copy_code', {'event_category': 'engagement'});
+                }
+                
+                document.getElementById('status').innerText = "✅ Copiato con successo!";
+                document.querySelector('.btn-action').innerText = "CODICE COPIATO!";
+                setTimeout(() => {
+                    document.getElementById('status').innerText = "Tocca per copiare";
+                    document.querySelector('.btn-action').innerText = "COPIA CODICE";
+                }, 2500);
+            });
+        }
+    </script>
+</body>
+</html>
